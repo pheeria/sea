@@ -1,10 +1,13 @@
 #include <stdio.h>
 #include "minunit.h"
 
+#include "dynamic_array.h"
+
 int tests_run = 0;
 
 static char * test_equality() {
-    mu_assert("Equality!", 7 == 8);
+    DynamicArray *da = da_create();
+    mu_assert("New capacity", da->capacity == 8);
     return 0;
 }
 
